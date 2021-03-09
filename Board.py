@@ -19,6 +19,8 @@ class Board:
     def show_board(self):
         for line in self.board:
             print(*line)
-a = Board(5,5)
+
+
+a = Board(5, 5)
 a.show_board()
 
