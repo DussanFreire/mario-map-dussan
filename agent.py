@@ -1,17 +1,20 @@
+from position import *
+
+
 class Agent:
     def __init__(self, settings):
         self.settings = settings
 
-    def transition_function(self, state, actions):
+    def transition_function(self, position, actions):
         successors = []
         for action in actions:
             if action == self.settings.UP:
-                successors.append([state[0] - 1, state[1]])
+                successors.append(Position(position.row - 1, position.col))
             if action == self.settings.DOWN:
-                successors.append([state[0] + 1, state[1]])
+                successors.append(Position(position.row + 1, position.col))
             if action == self.settings.LEFT:
-                successors.append([state[0], state[1] - 1])
+                successors.append(Position(position.row, position.col - 1))
             if action == self.settings.RIGHT:
-                successors.append([state[0], state[1] + 1])
+                successors.append(Position(position.row, position.col + 1))
 
         return successors

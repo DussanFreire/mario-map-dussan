@@ -2,8 +2,8 @@ from space import *
 
 
 class Pipeline(Space):
-    def __init__(self, x_position, y_position):
-        super().__init__(x_position, y_position)
+    def __init__(self, row_position, col_position):
+        super().__init__(row_position, col_position)
         self.value = "🏁"
 
 
