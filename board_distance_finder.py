@@ -48,7 +48,7 @@ class BoardDistanceFinder:
         open.put(position)
         while open.qsize() != 0:
             state_position = open.get()
-            BoardDistanceFinder.show_board(board)
+
             actions = [BoardDistanceFinder.settings.UP, BoardDistanceFinder.settings.DOWN, BoardDistanceFinder.settings.LEFT, BoardDistanceFinder.settings.RIGHT]
             successors_positions = BoardDistanceFinder.agent.transition_function(state_position, actions)
             successors_positions = BoardDistanceFinder._discard_successors(board, boar_dimensions, successors_positions, state_position)
@@ -57,3 +57,4 @@ class BoardDistanceFinder:
 
             for successor_position in successors_positions:
                 open.put(successor_position)
+        # BoardDistanceFinder.show_board(board)

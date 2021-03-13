@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block center %}
+
+
+    <h3>Add Pipeline:</h3>
+    <form action="{{ url_for('add_pipeline')}}" method="post">
+        <label for="pipe_row">Row:</label>
+        <input type="text" id="pipe_row" name="_pipe_row">
+        <label for="pipe_col">Col:</label>
+        <input type="text" id="pipe_col" name="_pipe_col">
+        <button type="submit" >Login</button>
+    </form>
+    <h3>Add Wall:</h3>
+    <form action="{{ url_for('add_wall')}}" method="post">
+        <label for="pipe_row">Row:</label>
+        <input type="text" id="wall_row" name="_wall_row">
+        <label for="pipe_col">Col:</label>
+        <input type="text" id="wall_col" name="_wall_col">
+        <button type="submit" >Login</button>
+    </form>
+
+    {{ Board_sol|safe }}
+{% endblock %}
+

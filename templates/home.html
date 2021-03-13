@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block center %}
+<h3>Crete the board 🗺:</h3>
+<form action="{{ url_for('board_created')}}" method="post">
+    <label for="firstname">Row:</label>
+    <input type="text" id="firstname" name="_rows" placeholder="rows">
+    <label for="lastname">Col:</label>
+    <input type="text" id="lastname" name="_cols" placeholder="cols">
+    <button type="submit" >Login</button>
+</form>
+{% endblock %}
