@@ -1,6 +1,6 @@
-from dimensions import *
 from wall import *
 from board_distance_finder import *
+from dimensions import *
 
 
 class Board:
@@ -34,7 +34,3 @@ class Board:
 
     def mark_distances(self):
         BoardDistanceFinder.mark_distances(self.board, self.boar_dimensions)
-
-
-a = Board(8, 8)
-a.mark_distances()
