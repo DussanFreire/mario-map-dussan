@@ -1,37 +1,33 @@
 # Help Mario 👨⚠‼ Save the princess 👸
 
 # Project Description
-_Is a basic web application where we can build our on Mario board which includes
-pipelines 🏁, walls 🟥 and of course Mario 👨! The main objective of this application is to find the distance from each free 
+_Is a basic web application where you can build your own board which includes pipelines 🏁, walls 🟥 and of course Mario 👨! The main objective of this application is to find the distance from each free
 space on the board to all pipelines and to find the path from Mario's position to the closest pipeline in the board._
 
 This web application has two basic interfaces:
-1. Menu:
-   <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg" /></div>
+1. Menú:
+  <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg" /></div>
 
 2. Board:
-   * You can load our default board and have a fast view of the application:<div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/default_board.jpg" /></div>
-   * You can crearte your own board with the dimensions that you want and play with the application options 😉: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg" /></div>
-   * Don't trap Mario 😂:<div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/mario_trapped.jpg" /></div>  
-    
-## Parte Teórica 📖:
-### 1. Diseña un Problem-Solver agent. Para esto tendrás que hacer una breve descripción de la formulación del objetivo, la formulacióon del problema (estado inicial, estado objetivo, test del objetivo, acciones, función de transición, costo) y finalmente, buscar, solucionar y ejecutar.
-
-* **Formulación del objetivo:** Encontrar la tubería más cercana de manera optima. 
-* **Formulación del problema:** 
-    * **Estado inicial:** El estado inicial es "Búsqueda de Tubería", el cual
-      empieza en la esquina superior izquierda del tablero.
-    * **Descripción de las acciones:** 
-      * El agente busca una tubería dentro del tablero
-      * El agente solo se acuerda de la distancia más corta hacia una tubería
-      desde el espacio donde este
-    * **Modelo de transición:** 
+* You can load our default board and have a fast view of the application:<div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/default_board.jpg" /></div>
+* You can create your own board with the dimensions that you want and play with the application options 😉: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg" /></div>
+* Don't trap Mario 😂:<div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/mario_trapped.jpg" /></div>
+## Problem solver agent:
+* **Formulation of the objective:** Find the closest pipeline in an optimal way.
+* **Problem formulation:** 
+    * **Initial state:** The initial state is a pipeline position.
+      * **Description of the actions:**
+        * UP = Move up from the current position ⬆ 
+        * DOWN = Move down from the current position ⬇
+        * LEFT = Move left from the current position ⬅
+        * RIGHT = Move right from the current position ➡
+    * **Transitional model:** 
       * pass
-    * **Test del objetivo:**
+    * **Target test:**
       * Si el espacio en que se encuentra el agente es de tipo tubería
-    * **Costo de ruta:**
-      * pass
-    * **Espacio de estados:**
+    * **Route cost:**
+      * The route cost for echa action is 1
+    * **State space:**
 * **Buscar, solucionar, ejecutar:**
       
 ### 2. Para la parte de buscar, solucionar y ejecutar vimos tres algoritmos de búsqueda no informada: BFS, DFS, e Iterative Deepening. Escoge el algoritmo más apropiado para poder ayudar a Mario y justifica tu decisión.

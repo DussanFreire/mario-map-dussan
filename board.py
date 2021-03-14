@@ -18,6 +18,7 @@ class Board:
             for col in range(0, num_cols):
                 matrix[row].append(FreeSpace())
         self.boar_dimensions = BoardDimensions(num_rows, num_cols)
+        self.mario = None
         self.board = matrix
         self.total_states = 0
 
@@ -89,3 +90,8 @@ class Board:
         self._mark_distances()
         self._find_shortest_path()
 
+# a= Board()
+# a.init_board(10, 10)
+# a._add_pipelines(Position(1 - 1, 1 - 1), Position(10 - 1, 10 - 1))
+# a._mark_distances()
+# a._find_shortest_path()
