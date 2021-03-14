@@ -26,5 +26,10 @@
     <h3></h3>
 
     {{ Board_sol|safe }}
+    <h3></h3>
+
+    <form action="{{ url_for('index')}}" method="get">
+        <button type="submit" style="background-color: red; color: white">Back to Menu</button>
+    </form>
 {% endblock %}
 
