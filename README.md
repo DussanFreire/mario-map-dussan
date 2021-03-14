@@ -6,9 +6,16 @@ pipelines 🏁, walls 🟥 and of course Mario 👨! The main objective of this 
 space on the board to all pipelines and to find the path from Mario's position to the closest pipeline in the board._
 
 This web application has two basic interfaces:
-1. "Menu": 
-2. "Board"
+1. "Menu":
+     ![alt text](https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg)
 
+2. "Board"
+   * You can load our default board and have a fast view of the application
+     ![alt text](https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/default_board.jpg)
+   * You can crearte your own board with the dimensions that you want and play with the application options 😉
+     ![alt text](https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/mario_trapped.jpg)
+   * Don't trap Mario 😂
+     ![alt text](https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg)
 ## Parte Teórica 📖:
 ### 1. Diseña un Problem-Solver agent. Para esto tendrás que hacer una breve descripción de la formulación del objetivo, la formulacióon del problema (estado inicial, estado objetivo, test del objetivo, acciones, función de transición, costo) y finalmente, buscar, solucionar y ejecutar.
 
