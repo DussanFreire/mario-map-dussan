@@ -6,5 +6,5 @@ if __name__ == "__main__":
     a.add_pipelines(Position(7,7))
     a.mark_distances()
 
-    print(a.obtenerTableroHTML())
+    print(a.get_html_board())
 

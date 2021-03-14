@@ -37,3 +37,5 @@ class BoardValidations:
         return BoardValidations.is_a_valid_space(successor_position, boar_dimensions) and \
                isinstance(board[successor_position.row][successor_position.col], FreeSpace) and \
                BoardValidations.is_a_valid_successor(board[successor_position.row][successor_position.col], state)
+
+
