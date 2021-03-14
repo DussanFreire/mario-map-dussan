@@ -7,7 +7,7 @@ space on the board to all pipelines and to find the path from Mario's position t
 
 This web application has two basic interfaces:
 1. "Menu":
-     ![alt text](https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg)
+   <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg" /></div>
 
 2. "Board"
    * You can load our default board and have a fast view of the application
