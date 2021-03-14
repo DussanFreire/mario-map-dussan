@@ -10,12 +10,10 @@ This web application has two basic interfaces:
    <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg" /></div>
 
 2. Board:
-   * You can load our default board and have a fast view of the application:
-   <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/default_board.jpg" /></div>
-   * You can crearte your own board with the dimensions that you want and play with the application options 😉:
-   <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/mario_trapped.jpg" /></div>
-   * Don't trap Mario 😂:
-   <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg" /></div>
+   * You can load our default board and have a fast view of the application:<div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/default_board.jpg" /></div>
+   * You can crearte your own board with the dimensions that you want and play with the application options 😉: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg" /></div>
+   * Don't trap Mario 😂:<div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/mario_trapped.jpg" /></div>  
+    
 ## Parte Teórica 📖:
 ### 1. Diseña un Problem-Solver agent. Para esto tendrás que hacer una breve descripción de la formulación del objetivo, la formulacióon del problema (estado inicial, estado objetivo, test del objetivo, acciones, función de transición, costo) y finalmente, buscar, solucionar y ejecutar.
 

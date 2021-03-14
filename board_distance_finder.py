@@ -76,11 +76,13 @@ class BoardDistanceFinder:
 
     @staticmethod
     def mark_distances(board, boar_dimensions):
+        total_states = 0
         BoardDistanceFinder.clean_board(board)
         for row in board:
             for element in row:
                 if isinstance(element, Pipeline):
-                    BoardDistanceFinder._mark_distance_in_the_board_bfs(board, element.position, boar_dimensions)
+                    total_states += BoardDistanceFinder._mark_distance_in_the_board_dfs(board, element.position, boar_dimensions)
+        return total_states
 
     @staticmethod
     def clean_board(board):
@@ -123,4 +125,24 @@ class BoardDistanceFinder:
 
             for successor_position in successors_positions:
                 open.put(successor_position)
-        # BoardDistanceFinder.show_board(board)
+
+    @staticmethod
+    def _mark_distance_in_the_board_dfs(board, position, boar_dimensions):
+        open = []
+        close = []
+
+        open.append(position)
+
+        while len(open) != 0:
+            state_position = open.pop()
+            # mark it as visited
+            actions = [BoardDistanceFinder.settings.UP, BoardDistanceFinder.settings.DOWN, BoardDistanceFinder.settings.LEFT, BoardDistanceFinder.settings.RIGHT]
+            successors_positions = BoardDistanceFinder.agent.transition_function(state_position, actions)
+            successors_positions = BoardDistanceFinder._discard_successors(board, boar_dimensions, successors_positions, state_position)
+            BoardDistanceFinder._mark_successors_distance(board, successors_positions, state_position)
+
+            close.append(state_position)
+
+            for successor_position in successors_positions:
+                open.append(successor_position)
+        return len(close)

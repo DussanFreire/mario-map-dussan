@@ -9,6 +9,7 @@ class Board:
         self.boar_dimensions = None
         self.board = None
         self.mario = None
+        self.total_states = 0
 
     def init_board(self, num_rows, num_cols):
         matrix = []
@@ -18,6 +19,7 @@ class Board:
                 matrix[row].append(FreeSpace())
         self.boar_dimensions = BoardDimensions(num_rows, num_cols)
         self.board = matrix
+        self.total_states = 0
 
     def _add_pipelines(self, *pipeline_positions):
         for position in pipeline_positions:
@@ -32,7 +34,7 @@ class Board:
             self.board[self.mario.position.row][self.mario.position.col] = FreeSpace()
         self.mario = Mario()
         self.mario.position = position
-        self.board[self.mario.position.row][self.mario.position.col] = self.mario
+        self.board[position.row][position.col] = self.mario
 
     def load_default_board(self):
         self.init_board(4, 4)
@@ -43,7 +45,7 @@ class Board:
         self._find_shortest_path()
 
     def _mark_distances(self):
-        BoardDistanceFinder.mark_distances(self.board, self.boar_dimensions)
+        self.total_states = BoardDistanceFinder.mark_distances(self.board, self.boar_dimensions)
 
     def _find_shortest_path(self):
         if self.mario is not None:
