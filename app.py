@@ -47,7 +47,7 @@ def add_mario():
         mario_row = int(request.form.get("_mario_row"))
         mario_col = int(request.form.get("_mario_col"))
         pos = Position(mario_row-1, mario_col-1)
-        board.add_element_and_reload_distances("pipeline", mario_row, mario_col)
+        board.add_element_and_reload_distances("mario", mario_row, mario_col)
         return render_template('board.html', Board_sol=board.get_html_board())
     return render_template('board.html', Board_sol=board.get_html_board())
 

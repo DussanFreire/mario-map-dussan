@@ -39,13 +39,13 @@ class Board:
         self._add_pipelines(Position(0, 3), Position(3, 0))
         self._add_walls(Position(0, 1), Position(2, 1), Position(3, 1), Position(1, 3), Position(2, 3))
         self._add_mario(Position(0, 0))
-        self.mark_distances()
-        self.find_shortest_path()
+        self._mark_distances()
+        self._find_shortest_path()
 
-    def mark_distances(self):
+    def _mark_distances(self):
         BoardDistanceFinder.mark_distances(self.board, self.boar_dimensions)
 
-    def find_shortest_path(self):
+    def _find_shortest_path(self):
         if self.mario is not None:
             return BoardDistanceFinder.find_shortest_path(self.board, self.mario.position, self.boar_dimensions)
         return None
@@ -84,6 +84,6 @@ class Board:
             self._add_pipelines(Position(row_pos - 1, col_pos - 1))
         if name_element == "wall":
             self._add_walls(Position(row_pos - 1, col_pos - 1))
-        self.board.mark_distances()
-        self.board.find_shortest_path()
+        self._mark_distances()
+        self._find_shortest_path()
 

@@ -1,6 +1,13 @@
-# mario-map-dussan
+# Help Mario 👨⚠‼ Save the princess 👸
 
-_En este proyecto se hizo la resolución del la práctica número 2 de la asignatura "Sistemas Inteligentes" dirigida por el docente Gerard Salinas Joan Sebastian en la UCB Cochabamba._
+# Project Description
+_Is a basic web application where we can build our on Mario board which includes
+pipelines 🏁, walls 🟥 and of course Mario 👨! The main objective of this application is to find the distance from each free 
+space on the board to all pipelines and to find the path from Mario's position to the closest pipeline in the board._
+
+This web application has two basic interfaces:
+1. "Menu": 
+2. "Board"
 
 ## Parte Teórica 📖:
 ### 1. Diseña un Problem-Solver agent. Para esto tendrás que hacer una breve descripción de la formulación del objetivo, la formulacióon del problema (estado inicial, estado objetivo, test del objetivo, acciones, función de transición, costo) y finalmente, buscar, solucionar y ejecutar.
