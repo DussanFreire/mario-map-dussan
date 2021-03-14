@@ -26,10 +26,7 @@ def add_pipeline():
     if request.method == "POST":
         pipe_row = int(request.form.get("_pipe_row"))
         pipe_col = int(request.form.get("_pipe_col"))
-        pos = Position(pipe_row -1, pipe_col-1)
-        board.add_pipelines(pos)
-        board.mark_distances()
-        board.find_shortest_path()
+        board.add_element_and_reload_distances("pipeline", pipe_row, pipe_col)
         return render_template('board.html', Board_sol=board.get_html_board())
     return render_template('board.html', Board_sol=board.get_html_board())
 
@@ -39,10 +36,7 @@ def add_wall():
     if request.method == "POST":
         wall_row = int(request.form.get("_wall_row"))
         wall_col = int(request.form.get("_wall_col"))
-        pos = Position(wall_row-1, wall_col-1)
-        board.add_walls(pos)
-        board.mark_distances()
-        board.find_shortest_path()
+        board.add_element_and_reload_distances("wall", wall_row, wall_col)
         return render_template('board.html', Board_sol=board.get_html_board())
     return render_template('board.html', Board_sol=board.get_html_board())
 
@@ -53,9 +47,15 @@ def add_mario():
         mario_row = int(request.form.get("_mario_row"))
         mario_col = int(request.form.get("_mario_col"))
         pos = Position(mario_row-1, mario_col-1)
-        board.add_mario(pos)
-        board.mark_distances()
-        board.find_shortest_path()
+        board.add_element_and_reload_distances("pipeline", mario_row, mario_col)
+        return render_template('board.html', Board_sol=board.get_html_board())
+    return render_template('board.html', Board_sol=board.get_html_board())
+
+
+@app.route('/defaultMap', methods=["GET", "POST"])
+def load_default_map():
+    if request.method == "POST":
+        board.load_default_board()
         return render_template('board.html', Board_sol=board.get_html_board())
     return render_template('board.html', Board_sol=board.get_html_board())
 
