@@ -89,9 +89,3 @@ class Board:
             self._add_walls(Position(row_pos - 1, col_pos - 1))
         self._mark_distances()
         self._find_shortest_path()
-
-# a= Board()
-# a.init_board(10, 10)
-# a._add_pipelines(Position(1 - 1, 1 - 1), Position(10 - 1, 10 - 1))
-# a._mark_distances()
-# a._find_shortest_path()

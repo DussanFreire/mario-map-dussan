@@ -17,7 +17,7 @@ class BoardValidations:
 
     @staticmethod
     def _is_a_valid_distance_to_change(state, successor):
-        return successor.distance == 0 or successor.distance > state.distance
+        return successor.distance == 0 #or successor.distance + 1 > state.distance
 
     @staticmethod
     def is_a_valid_successor(successor, state):
