@@ -51,8 +51,8 @@ class BoardDistanceFinder:
         shortest_path = []
         actions = [BoardDistanceFinder.settings.UP, BoardDistanceFinder.settings.DOWN,
                    BoardDistanceFinder.settings.LEFT, BoardDistanceFinder.settings.RIGHT]
-        posibles_steps = BoardDistanceFinder.agent.transition_function(mario_position, actions)
-        initial_step_position = BoardDistanceFinder.select_initial_step(board, boar_dimensions, posibles_steps)
+        posible_steps = BoardDistanceFinder.agent.transition_function(mario_position, actions)
+        initial_step_position = BoardDistanceFinder.select_initial_step(board, boar_dimensions, posible_steps)
         if initial_step_position is None:
             board[mario_position.row][mario_position.col].color = "red"
             return shortest_path
@@ -63,8 +63,8 @@ class BoardDistanceFinder:
         while not isinstance(board[initial_step_position.row][initial_step_position.col], Pipeline):
             actions = [BoardDistanceFinder.settings.UP, BoardDistanceFinder.settings.DOWN,
                        BoardDistanceFinder.settings.LEFT, BoardDistanceFinder.settings.RIGHT]
-            posibles_steps = BoardDistanceFinder.agent.transition_function(initial_step_position, actions)
-            next_step_position = BoardDistanceFinder.select_next_step(board, boar_dimensions, posibles_steps,
+            posible_steps = BoardDistanceFinder.agent.transition_function(initial_step_position, actions)
+            next_step_position = BoardDistanceFinder.select_next_step(board, boar_dimensions, posible_steps,
                                                                       initial_step_position)
             if next_step_position is not None:
                 shortest_path.append(next_step_position)

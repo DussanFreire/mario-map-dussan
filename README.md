@@ -22,10 +22,10 @@ This web application has two basic interfaces:
         * LEFT = Move left from the current position ⬅
         * RIGHT = Move right from the current position ➡
     * **Transitional model:**
-        * UP: move("up", state.row, state.col) ➡ state: (row, col + 1)
-        * DOWN: move("down", state.row, state.col) ➡ state: (row, col - 1)
-        * LEFT: move("left", state.row, state.col) ➡ state: (row - 1, col)
-        * RIGHT: move("right", state.row, state.col) ➡ state: (row - 1, col)
+        * UP: move("up", state.row, state.col) -> state: (row, col + 1)
+        * DOWN: move("down", state.row, state.col) -> state: (row, col - 1)
+        * LEFT: move("left", state.row, state.col) -> state: (row - 1, col)
+        * RIGHT: move("right", state.row, state.col) -> state: (row - 1, col)
     * **Target test:**
       * In this case we don't have a target because this prophecy is working with a normal agent. We could
       say that the target test would be to mark all the free spaces with the correct distance to the closest pipeline
@@ -38,7 +38,7 @@ This web application has two basic interfaces:
   This quantity doesn't seam to high when we compare it with the same example using BFS: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" /></div>
   But testing both with bigger boards the difference was about hundreds of states
   
-## Problem solver agent:
+## Algorithms:
 * **Algorithm used to mark all the distances:** 
     * All the pipelines positions are selected and saved in the queue from the bfs algorithm
     * An empty list was declared to save all the states or successors 
@@ -53,6 +53,19 @@ This web application has two basic interfaces:
             * if the state is the root, then the successor distance marked in the free space is 1
             * if the state is also a free space, then the successor distance is the state distance + 1
         * The current state is added to the "states list"
-        * All the successors al added to the queue
+        * All the successors are added to the queue
     * The length from the states list was returned
-    
+* **Algorithm used to mark and select the best path from Mario's Position ✅:**
+    * First we need to find the initial step from Mario's position 
+        * The agent creates 4 possible successors(each successor comes from the chosen actions) from Mario's position
+        * If one of the posible positions is a pipeline, the position is marked, and the process ends
+        * If the is not a pipeline around Mario, then the initial state will be one of the possible options which follows 
+          the next conditions:
+            * Must be a free space
+            * Its distance must be higher than 0
+            * It's distance must ve the lower from the posible successors
+            * If there is only free spaces with a distance 0 marked, then we can't select the initial state because Mario is trapped
+    * The position of the initial step will be the current position from the first cicle of the next step
+    * It's time to choose the next step, this process will be repeated until we find a pipeline. 
+        * The next free space, which has a distance equals to the current position distance - 1, will be  the next step 
+          and the current position for the next step. 
