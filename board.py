@@ -57,18 +57,19 @@ class Board:
         tabla = "<head> <table style='background-color:black;'>"
         tabla += "<tr><td></td>"
         for col in range(0, self.boar_dimensions.num_cols):
-            tabla += "<td width=20 border=1 style=' border-color: black;color: white; background-color: black;text-align:center;'>" + str(
-                col + 1) + "</td>"
+            tabla += "<td width=20 border=1 style=' border-color: black;color: white; background-color: " \
+                     "black;text-align:center;'>" + str(col + 1) + "</td>"
         tabla += "</tr>"
         for row in range(0, self.boar_dimensions.num_rows):
             tabla += "<tr>"
-            tabla += "<td width=20 border=1 style='border-color: black;color: white; background-color: black;text-align:center;'>" + str(
-                row + 1) + "</td>"
+            tabla += "<td width=20 border=1 style='border-color: black;color: white; background-color: " \
+                     "black;text-align:center;'>" + str(row + 1) + "</td>"
             for col in range(0, self.boar_dimensions.num_cols):
-                value = self.board[row][col].distance if isinstance(self.board[row][col], FreeSpace) else self.board[row][
-                    col].value
-                tabla += "<td width=20 border=1 style='border-color: black;color: black; background-color: " + self.board[row][col].color + ";text-align:center;'>" + str(
-                    value) + "</td>"
+                value = self.board[row][col].distance if isinstance(self.board[row][col], FreeSpace) else \
+                    self.board[row][
+                        col].value
+                tabla += "<td width=20 border=1 style='border-color: black;color: black; background-color: " + \
+                         self.board[row][col].color + ";text-align:center;'>" + str(value) + "</td>"
             tabla += "</tr>"
         tabla += "</table> </head>"
         return tabla

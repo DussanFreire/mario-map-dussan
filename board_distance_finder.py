@@ -128,13 +128,10 @@ class BoardDistanceFinder:
             successors_positions = BoardDistanceFinder._discard_successors(board, boar_dimensions, successors_positions,
                                                                            state_position)
             BoardDistanceFinder._mark_successors_distance(board, successors_positions, state_position)
-            # print(state_position.row,state_position.col)
             close.append(state_position)
-            # BoardDistanceFinder.show_board(board)
             for successor_position in successors_positions:
                 open.put(successor_position)
         return len(close)
-
 
     @staticmethod
     def _mark_distance_in_the_board_dfs(board, pipelines_positions, boar_dimensions):

@@ -17,7 +17,7 @@ class BoardValidations:
 
     @staticmethod
     def _is_a_valid_distance_to_change(state, successor):
-        return successor.distance == 0 #or successor.distance + 1 > state.distance
+        return successor.distance == 0  # or successor.distance > state.distance + 1
 
     @staticmethod
     def is_a_valid_successor(successor, state):
@@ -37,5 +37,3 @@ class BoardValidations:
         return BoardValidations.is_a_valid_space(successor_position, boar_dimensions) and \
                isinstance(board[successor_position.row][successor_position.col], FreeSpace) and \
                BoardValidations.is_a_valid_successor(board[successor_position.row][successor_position.col], state)
-
-
