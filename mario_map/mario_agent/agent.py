@@ -1,4 +1,4 @@
-from position import *
+from mario_map.mario_board.position import Position
 
 
 class Agent:

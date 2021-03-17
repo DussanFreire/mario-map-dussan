@@ -1,7 +1,10 @@
-from wall import *
-from board_distance_finder import *
-from dimensions import *
-from mario import Mario
+from mario_map.board_space.wall import Wall
+from mario_map.board_space.free_space import FreeSpace
+from mario_map.board_space.pipeline import Pipeline
+from mario_map.mario_board.board_distance_finder import BoardDistanceFinder
+from mario_map.mario_board.position import Position
+from mario_map.mario_board.dimensions import Dimensions
+from mario_map.board_space.mario import Mario
 
 
 class Board:
@@ -17,7 +20,7 @@ class Board:
             matrix.append([])
             for col in range(0, num_cols):
                 matrix[row].append(FreeSpace())
-        self.boar_dimensions = BoardDimensions(num_rows, num_cols)
+        self.boar_dimensions = Dimensions(num_rows, num_cols)
         self.mario = None
         self.board = matrix
         self.total_states = 0

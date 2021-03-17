@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request
-from board import Board
-from position import Position
+from mario_map.mario_board.board import Board
 
 app = Flask(__name__)
-board = Board()
 
 
 @app.route('/')
@@ -46,7 +44,6 @@ def add_mario():
     if request.method == "POST":
         mario_row = int(request.form.get("_mario_row"))
         mario_col = int(request.form.get("_mario_col"))
-        pos = Position(mario_row-1, mario_col-1)
         board.add_element_and_reload_distances("mario", mario_row, mario_col)
         return render_template('board.html', Board_sol=board.get_html_board(), Total_states=board.total_states)
     return render_template('board.html', Board_sol=board.get_html_board(), Total_states=board.total_states)
@@ -61,4 +58,5 @@ def load_default_map():
 
 
 if __name__ == "__main__":
+    board = Board()
     app.run(debug=True)

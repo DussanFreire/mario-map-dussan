@@ -1,8 +1,10 @@
-from board_validations import *
+from mario_map.mario_board.board_validations import BoardValidations
+from mario_map.board_space.pipeline import Pipeline
+from mario_map.board_space.free_space import FreeSpace
+from mario_map.mario_agent.settings import Settings
+from mario_map.mario_agent.agent import Agent
+from mario_map.board_space.mario import Mario
 import queue
-from settings import *
-from agent import *
-from mario import Mario
 
 
 class BoardDistanceFinder:

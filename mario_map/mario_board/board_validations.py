@@ -1,5 +1,5 @@
-from free_space import *
-from pipeline import *
+from mario_map.board_space.free_space import FreeSpace
+from mario_map.board_space.pipeline import Pipeline
 
 
 class BoardValidations:
