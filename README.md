@@ -1,13 +1,17 @@
 # Help Mario 👨⚠‼ Save the princess 👸
-
+# Prerequisites:
+* Conda 4.9.2
+* JetBrains IDE
+# Installation
+* Open a terminal in the folder named "mario-map-dussan"
+* Write the following command: "python app.py"
+* Click on the URL or open your localhost <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/instruccions.jpg" /></div>
 # Project Description
 _Is a basic web application where you can build your own board which includes pipelines 🏁, walls 🟥 and of course Mario 👨! The main objective of this application is to find the distance from each free
 space on the board to all pipelines, and the path from Mario's position to the closest pipeline in the board._
 
 This web application has two basic interfaces:
-1. Menú:
-  <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg" /></div>
-
+1. Menú:  <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg" /></div>
 2. Board:
 * You can load a default board and have a fast view of the application:<div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/default_board.jpg" /></div>
 * You can create your own board with the dimensions that you want and play with the application options 😉: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg" /></div>
@@ -36,7 +40,11 @@ This web application has two basic interfaces:
     The search algorithm BFS was used in this project, even though it uses more memory, its quantity of states is much
   lower than the quantity of states used in DFS. For example: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states using dfs.jpg" /></div>
   This quantity doesn't seam to high when we compare it with the same example using BFS: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" /></div>
-  But testing both with bigger boards the difference was about hundreds of states
+  But testing both with bigger boards the difference are bigger.<br> 
+  When we use dfs in a 11x11 board with a pipeline at the 
+  position (6, 6), the program ha to go through 1043 states. <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/dfs in a 11x11 board.jpg" /></div>
+  In the other hand, when a bfs algorithm is used for the same problem the program only goes through 121 states. <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/bfs in a 11x11 board.jpg" /></div>
+  That's the main reason why we rather use bfs for this program.
   
 ## Algorithms:
 * **Algorithm used to mark all the distances:** 
