@@ -40,7 +40,7 @@ This web application has two basic interfaces:
     The search algorithm BFS was used in this project, even though it uses more memory, its quantity of states is much
   lower than the quantity of states used in DFS. For example: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states using dfs.jpg" /></div>
   This quantity doesn't seam to high when we compare it with the same example using BFS: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" /></div>
-  But testing both with bigger boards the difference are bigger.<br> 
+  <br> 
   When the algorithm dfs is used on a 11x11 board with a pipeline at the 
   position (6, 6), the program goes through 1043 states. <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/dfs in a 11x11 board.jpg" /></div>
   In the other hand, when a bfs algorithm is used for the same problem the program only goes through 121 states. <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/bfs in a 11x11 board.jpg" /></div>
@@ -48,32 +48,34 @@ This web application has two basic interfaces:
   
 ## Algorithms:
 * **Algorithm used to mark all the distances:** 
-    * All the pipelines positions are selected and saved in the queue from the bfs algorithm
+  * Steps used:
+    * All the pipelines positions were selected and saved in the queue from the bfs algorithm
     * An empty list was declared to save all the states or successors 
-    * The loop begins       
-        * The agent creates 4 possible successors(each successor comes from the chosen actions) from each pipeline position in the list
-        * The possible successors that doesn't complete the following conditions are remove from the list 🚫: 
+    * The loop begun       
+        * One position from the queue was taken, and the agent created 4 possible successors for that position(each 
+          successor comes from the chosen actions) 
+        * The possible successors that weren't able to complete the following conditions were removed from the list of 
+          possible successors 🚫: 
             * The position must be inside the board
             * The position must be a free space
             * The successor can't be the parent from the current state
             * A free space that has already been marked can't be a successor
-        * The distance is marked, on the successors, in the following way:
+        * The distance was marked, on the successors, in the following way:
             * if the state is the root, then the successor distance marked in the free space is 1
             * if the state is also a free space, then the successor distance is the state distance + 1
-        * The current state is added to the "states list"
-        * All the successors are added to the queue
-    * The length from the states list was returned
+        * The current state was added to the "states list"
+        * All the successors were added to the queue
+    * At the end, of the process, the length from the states list was returned
 * **Algorithm used to mark and select the best path from Mario's Position ✅:**
-    * First we need to find the initial step from Mario's position 
-        * The agent creates 4 possible successors(each successor comes from the chosen actions) from Mario's position
-        * If one of the posible positions is a pipeline, the position is marked, and the process ends
-        * If the is not a pipeline around Mario, then the initial state will be one of the possible options which follows 
+  * Steps used:
+    * The process begun finding the initial step from Mario's position 
+        * The agent created 4 possible successors(each successor comes from the chosen actions) from Mario's position
+        * If one of the posible positions was a pipeline, the position was marked, and the process ended
+        * If there wasn't a pipeline around Mario, then the initial state would be one of the possible options which follows 
           the next conditions:
             * Must be a free space
             * Its distance must be higher than 0
             * It's distance must ve the lower from the posible successors
             * If there is only free spaces with a distance 0 marked, then we can't select the initial state because Mario is trapped
     * The position of the initial step will be the current position from the first cicle of the next step
-    * It's time to choose the next step, this process will be repeated until we find a pipeline. 
-        * The next free space, which has a distance equals to the current position distance - 1, will be  the next step 
-          and the current position for the next step. 
+    * if the pipeline wasn't around Mario, then a similar process was used and repeated until the pipeline was found 
