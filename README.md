@@ -2,6 +2,7 @@
 # Prerequisites:
 * Conda 4.9.2
 * JetBrains IDE
+* If you don't have conda, then maybe you will need to install flask
 # Installation
 * Open a terminal in the folder named "mario-map-dussan"
 * Write the following command: "python app.py"
