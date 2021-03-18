@@ -38,10 +38,10 @@ This web application has two basic interfaces:
     * **State space:** :<div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" /></div>     
 * **Search:**
     The search algorithm BFS was used in this project, even though it uses more memory, its quantity of states is much
-  lower than the quantity of states used in DFS. For example: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states using dfs.jpg" /></div>
+  lower than the quantity of states used in DFS. For example in the following image we can see how the dfs algorithm 
+  would mark all the free spaces on the board: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states using dfs.jpg" /></div>
   This quantity doesn't seam to high when we compare it with the same example using BFS: <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" /></div>
-  <br> 
-  When the algorithm dfs is used on a 11x11 board with a pipeline at the 
+  But when the algorithm dfs is used on a 11x11 board with a pipeline at the 
   position (6, 6), the program goes through 1043 states. <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/dfs in a 11x11 board.jpg" /></div>
   In the other hand, when a bfs algorithm is used for the same problem the program only goes through 121 states. <div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/bfs in a 11x11 board.jpg" /></div>
   That's the main reason why we rather use bfs for this program.
