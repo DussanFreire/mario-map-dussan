@@ -76,7 +76,7 @@ This web application has two basic interfaces:
           the next conditions:
             * Must be a free space
             * Its distance must be higher than 0
-            * It's distance must ve the lower from the posible successors
+            * It's distance must be the lower from the posible successors
             * If there is only free spaces with a distance 0 marked, then we can't select the initial state because Mario is trapped
     * The position of the initial step will be the current position from the first cicle of the next step
     * if the pipeline wasn't around Mario, then a similar process was used and repeated until the pipeline was found 
