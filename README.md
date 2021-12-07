@@ -28,9 +28,12 @@ This web application has two basic interfaces:
 
 * You can create your own board with the dimensions that you want and play with the application options 😉:
     <p align="center">
-<img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg" />
+      <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg" />
    </p>
-* Don't trap Mario 😂:<div style="text-align:center"><img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/mario_trapped.jpg" /></div>
+* Don't trap Mario 😂:
+<p align="center">
+      <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/mario_trapped.jpg" />
+   </p>
 ## Agent:
 * **Formulation of the objective:** The objective is to mark the shortest distance from a pipeline in all the free spaces of the board, and find the shortest path from Mario's position
 * **Problem formulation:** 
@@ -52,16 +55,16 @@ This web application has two basic interfaces:
       * The route cost for each action is 1
     * **State space:** :
     
-    <p align="center">
-<img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" />
-   </p>
+<p align="center">
+   <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" />
+</p>
 * **Search:**
     The search algorithm BFS was used in this project, even though it uses more memory, its quantity of states is much
   lower than the quantity of states used in DFS. For example in the following image we can see how the dfs algorithm 
   would mark all the free spaces on the board: 
   <p align="center">
-  <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states using dfs.jpg" />
-   </p>
+     <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states using dfs.jpg" />
+  </p>
   This quantity doesn't seam to high when we compare it with the same example using BFS:
   <p align="center">
   <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" />
