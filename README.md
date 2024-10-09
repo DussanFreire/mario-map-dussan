@@ -1,87 +1,109 @@
-# Help Mario 👨⚠‼ Save the princess 👸
-# Prerequisites:
-* Conda 4.9.2
-* JetBrains IDE
-* If you don't have conda, then maybe you will need to install flask
-# Installation
-* Open a terminal in the folder named "mario-map-dussan"
-* Write the following command: "python app.py"
-* Click on the URL or open your localhost 
- <p align="center">
-<img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/instruccions.jpg" />
-   </p> 
-# Project Description
-_Is a basic web application where you can build your own board which includes pipelines 🏁, walls 🟥 and of course Mario 👨! The main objective of this application is to find the distance from each free
-space on the board to all pipelines, and the path from Mario's position to the closest pipeline in the board._
+# 🏃‍♂️ Help Mario Save the Princess 👸
 
-This web application has two basic interfaces:
-1. Menú: 
- <p align="center">
-<img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg" />
-   </p> 
-2. Board:
-* You can load a default board and have a fast view of the application:
- <p align="center">
-<img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/default_board.jpg" />
-   </p>
+## Project Overview
+Help Mario navigate through a custom-built board filled with obstacles like walls 🟥 and pipelines 🏁. The goal is to find the shortest path from Mario's position to the nearest pipeline using search algorithms. This project demonstrates how Breadth-First Search (BFS) and Depth-First Search (DFS) can be applied to pathfinding challenges.
 
+## Prerequisites
 
-* You can create your own board with the dimensions that you want and play with the application options 😉:
-    <p align="center">
-      <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg" />
-   </p>
+- **Conda 4.9.2** (Recommended)
+- **JetBrains IDE** (Optional, but preferred)
+- If Conda is not available, you might need to install Flask separately using `pip install flask`.
+
+## Installation and Setup
+
+1. Open a terminal in the project folder, named `mario-pathfinder`.
+2. Run the following command to start the Flask application:
+   ```bash
+   python app.py
+   ```
+3.	Once the server is running, access the web app by clicking the URL provided in the terminal or by visiting localhost in your browser
+
+<p align="center">
+  <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/instruccions.jpg" alt="Instructions Screenshot"/>
+</p>
+
+## Project Description
+
+This web application lets you build custom boards containing Mario 👨, pipelines 🏁, and walls 🟥. The main goal is to calculate the shortest path between Mario’s position and the nearest pipeline while also computing the distances from every free space on the board to all pipelines.
+
+### User Interfaces
+
+1.	Menu: Select or create a new board.
+<p align="center">
+  <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/menu.jpg" alt="Menu Interface"/>
+</p>
+
+2.	Board: Load a default board or create your own and start playing.
+*	Default Board: Get a quick overview of the app.
+
+<p align="center">
+  <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/default_board.jpg" alt="Default Board"/>
+</p>
+
+* Custom Board: Build a board with the dimensions you prefer and explore its features.
+  
+<p align="center">
+  <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/created_map.jpg" alt="Custom Board"/>
+</p>
+
+### Gameplay Tip:
+
 * Don't trap Mario 😂:
 <p align="center">
-      <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/mario_trapped.jpg" />
-   </p>
-## Agent:
-* **Formulation of the objective:** The objective is to mark the shortest distance from a pipeline in all the free spaces of the board, and find the shortest path from Mario's position
-* **Problem formulation:** 
-    * **Initial state:** The initial state is a board without any distances marked 
-      * **Description of the actions:**
-        * UP = Move up from the current position ⬆ 
-        * DOWN = Move down from the current position ⬇
-        * LEFT = Move left from the current position ⬅
-        * RIGHT = Move right from the current position ➡
-    * **Transitional model:**
-        * UP: move("up", state.row, state.col) -> state: (row, col + 1)
-        * DOWN: move("down", state.row, state.col) -> state: (row, col - 1)
-        * LEFT: move("left", state.row, state.col) -> state: (row - 1, col)
-        * RIGHT: move("right", state.row, state.col) -> state: (row - 1, col)
-    * **Target test:**
-      * In this case we don't have a target because this prophecy is working with a normal agent. We could
-      say that the target test would be to mark all the free spaces with the correct distance to the closest pipeline
-    * **Route cost:**
-      * The route cost for each action is 1
-    * **State space:** :
+  <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/mario_trapped.jpg" alt="Mario Trapped"/>
+</p>
+
+## Agent’s Role
+
+The agent’s task is to mark the shortest distance from all free spaces to the nearest pipeline and find the best path for Mario to reach one of the pipelines.
+
+### Problem Formulation
+
+* Initial State: The initial state is a board without any distances marked 
+  * Actions:
+    * UP = Move up from the current position ⬆ 
+    * DOWN = Move down from the current position ⬇
+    * LEFT = Move left from the current position ⬅
+    * RIGHT = Move right from the current position ➡
+* Transitional model:
+    * UP: move("up", state.row, state.col) -> state: (row, col + 1)
+    * DOWN: move("down", state.row, state.col) -> state: (row, col - 1)
+    * LEFT: move("left", state.row, state.col) -> state: (row - 1, col)
+    * RIGHT: move("right", state.row, state.col) -> state: (row - 1, col)
+* Goal Test: Mark all free spaces with the shortest distance to the nearest pipeline.
+* Cost: Each movement has a cost of 1.
+* State space:
     
 <p align="center">
    <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" />
 </p>
-* **Search:**
-    The search algorithm BFS was used in this project, even though it uses more memory, its quantity of states is much
-  lower than the quantity of states used in DFS. For example in the following image we can see how the dfs algorithm 
-  would mark all the free spaces on the board: 
-  <p align="center">
-     <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states using dfs.jpg" />
-  </p>
-  This quantity doesn't seam to high when we compare it with the same example using BFS:
-  <p align="center">
-  <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" />
-   </p>
-  But when the algorithm dfs is used on a 11x11 board with a pipeline at the 
-  position (6, 6), the program goes through 1043 states. 
-    <p align="center">
+
+## Search
+
+The search algorithm BFS was used in this project, even though it uses more memory, its quantity of states is much
+lower than the quantity of states used in DFS. For example in the following image we can see how the dfs algorithm 
+would mark all the free spaces on the board: 
+<p align="center">
+  <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states using dfs.jpg" />
+</p>
+This quantity doesn't seam to high when we compare it with the same example using BFS:
+<p align="center">
+<img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/states_bfs.jpg" />
+</p>
+But when the algorithm dfs is used on a 11x11 board with a pipeline at the 
+position (6, 6), the program goes through 1043 states. 
+ <p align="center">
 <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/dfs in a 11x11 board.jpg" />
-   </p>
-  In the other hand, when a bfs algorithm is used for the same problem the program only goes through 121 states.
-      <p align="center">
+</p>
+In the other hand, when a bfs algorithm is used for the same problem the program only goes through 121 states.
+   <p align="center">
 <img src="https://github.com/joangerard/mario-map-dussan/blob/main/screenshots/bfs in a 11x11 board.jpg" />
-   </p>
-  That's the main reason why we rather use bfs for this program.
+</p>
+That's the main reason why we rather use bfs for this program.
   
 ## Algorithms:
-* **Algorithm used to mark all the distances:** 
+
+* Algorithm used to mark all the distances:
   * Steps used:
     * All the pipelines positions were selected and saved in the queue from the bfs algorithm
     * An empty list was declared to save all the states or successors 
